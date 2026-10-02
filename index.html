@@ -263,6 +263,25 @@
         </div>
       </article>
 
+      <!-- 6. Job search automation -->
+      <article class="project">
+        <div class="thumb placeholder"><span>Adzuna API → Make<br>→ Google Sheets</span></div>
+        <div class="body">
+          <div class="tags-top"><span class="badge">Automatisation</span><span class="badge">Exécution quotidienne</span></div>
+          <h3>Automatisation de ma recherche d'emploi</h3>
+          <p class="question">Comment ne manquer aucune nouvelle offre Data autour de Nantes, sans doublon et sans y passer du temps chaque jour ?</p>
+          <ul>
+            <li>Scénario Make planifié chaque matin : appel de l'API REST Adzuna (offres « data », Nantes + 50 km, moins de 2 jours)</li>
+            <li>Dédoublonnage par identifiant unique : seules les nouvelles offres sont ajoutées au Google Sheet</li>
+            <li>Le même fichier sert de tableau de suivi de candidatures (date d'envoi, réponse, résultat)</li>
+          </ul>
+          <div class="stack"><span>Make</span><span>API REST</span><span>JSON</span><span>ETL</span><span>Google Sheets</span></div>
+          <div class="actions">
+            <a class="btn btn-ghost" href="https://github.com/XiaoqingGdc/job-search-automation-make" target="_blank" rel="noopener">Voir sur GitHub</a>
+          </div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
@@ -274,7 +293,7 @@
     <div class="grid3">
       <div class="box">
         <h3>Préparer les données</h3>
-        <p>Python, pandas, SQL, SQLite, BigQuery, Databricks. Nettoyage, contrôle qualité, pipelines ETL automatisés, API (FastAPI).</p>
+        <p>Python, pandas, SQL, SQLite, BigQuery, Databricks. Nettoyage, contrôle qualité, pipelines ETL automatisés, API (FastAPI, API REST), automatisation no-code (Make).</p>
       </div>
       <div class="box">
         <h3>Visualiser &amp; piloter</h3>
