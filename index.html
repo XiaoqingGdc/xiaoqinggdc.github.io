@@ -54,6 +54,8 @@
   .project:hover{box-shadow:0 10px 30px -18px rgba(15,42,61,.35)}
   .thumb{background:var(--navy);min-height:240px;position:relative;overflow:hidden}
   .thumb img{width:100%;height:100%;object-fit:cover;object-position:top left;display:block}
+  .thumb > span{display:none}
+  .thumb.placeholder > span{display:block}
   .thumb.placeholder{display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,var(--navy),var(--teal))}
   .thumb.placeholder span{font-family:Fraunces,serif;color:#fff;font-size:22px;text-align:center;opacity:.92;line-height:1.3}
   .body{padding:26px 28px}
@@ -74,6 +76,9 @@
   .box{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
   .box h3{margin:0 0 10px;font-size:17px;color:var(--navy)}
   .box p{margin:0;color:var(--muted);font-size:15px}
+  .box h3{margin-bottom:14px}
+  .box .stack{margin:0;gap:8px}
+  .box .stack span{font-size:14px;padding:3px 10px;color:var(--ink)}
 
   /* Timeline */
   .timeline{border-left:2px solid var(--line);margin-left:6px;padding-left:24px}
@@ -157,32 +162,30 @@
 
     <div class="projects">
 
-      <!-- 1. AdventureWorks -->
+      <!-- 1. Fuel -->
       <article class="project">
-        <div class="thumb placeholder"><span>Fournisseurs → Stocks → Marge</span></div>
+        <div class="thumb"><img src="fuel.png" alt="Aperçu du dashboard Looker Studio Fuel Price Tracker" loading="lazy" onerror="this.parentNode.classList.add('placeholder');this.remove()"><span>Open data → BigQuery<br>→ Looker Studio</span></div>
         <div class="body">
-          <div class="tags-top">
-            <span class="badge">Supply chain</span>
-            <span class="badge wip">En cours · finalisation octobre 2026</span>
-          </div>
-          <h3>AdventureWorks — Analyse supply chain</h3>
-          <p class="question">Quel est l'impact de la performance fournisseurs sur la rotation des stocks et la marge commerciale ?</p>
+          <div class="tags-top"><span class="badge">Pipeline automatisé</span><span class="badge">Données mises à jour chaque heure</span></div>
+          <h3>Fuel Price Tracker France</h3>
+          <p class="question">Où faire le plein au meilleur prix, près de chez moi, aujourd'hui ?</p>
           <ul>
-            <li>13 tables nettoyées (en-têtes, encodage) et chargées dans une base SQLite</li>
-            <li>Analyse exploratoire et API FastAPI pour exposer les indicateurs</li>
-            <li>Tableau de bord Power BI en cours de construction</li>
-            <li>Projet piloté en sprints hebdomadaires sur Trello</li>
+            <li>Pipeline ETL planifié (GitHub Actions) : open data gouvernemental → BigQuery, ~9 800 stations</li>
+            <li>Recherche par code postal et rayon grâce aux fonctions géographiques BigQuery</li>
+            <li>Qualité des données : ruptures vs arrêts définitifs, prix obsolètes signalés, fuseau horaire erroné corrigé dans la source</li>
+            <li>Constat : le gazole coûte environ 8 centimes de plus par litre sur autoroute</li>
           </ul>
-          <div class="stack"><span>Python</span><span>pandas</span><span>SQLite</span><span>FastAPI</span><span>Power BI</span><span>Trello</span></div>
+          <div class="stack"><span>Python</span><span>pandas</span><span>BigQuery SQL</span><span>GitHub Actions</span><span>Looker Studio</span></div>
           <div class="actions">
-            <a class="btn btn-ghost" href="https://github.com/XiaoqingGdc/adventureworks-supply-chain-analysis" target="_blank" rel="noopener">Code sur GitHub</a>
+            <a class="btn btn-primary" href="https://lookerstudio.google.com/reporting/9b5f5714-9fa5-41d2-a50d-8be26e03463f/page/9wBAG" target="_blank" rel="noopener">Ouvrir le dashboard</a>
+            <a class="btn btn-ghost" href="https://github.com/XiaoqingGdc/fuel-price-tracker-france" target="_blank" rel="noopener">Code sur GitHub</a>
           </div>
         </div>
       </article>
 
       <!-- 2. Performance commerciale -->
       <article class="project">
-        <div class="thumb placeholder"><span>Performance commerciale<br>2025 vs 2026</span></div>
+        <div class="thumb"><img src="performance.png" alt="Aperçu du dashboard Looker Studio Performance commerciale" loading="lazy" onerror="this.parentNode.classList.add('placeholder');this.remove()"><span>Performance commerciale<br>2025 vs 2026</span></div>
         <div class="body">
           <div class="tags-top"><span class="badge">Business intelligence</span></div>
           <h3>Performance commerciale France — 2025 vs 2026</h3>
@@ -203,7 +206,7 @@
 
       <!-- 3. Rivage -->
       <article class="project">
-        <div class="thumb"><img src="rivage.png" alt="Aperçu du dashboard Power BI Rivage Hôtel Group" loading="lazy" onerror="this.parentNode.classList.add('placeholder');this.remove()"></div>
+        <div class="thumb"><img src="rivage.png" alt="Aperçu du dashboard Power BI Rivage Hôtel Group" loading="lazy" onerror="this.parentNode.classList.add('placeholder');this.remove()"><span>Rivage Hôtel Group<br>Power BI</span></div>
         <div class="body">
           <div class="tags-top"><span class="badge">Hôtellerie</span></div>
           <h3>Rivage Hôtel Group — Dashboard Power BI</h3>
@@ -221,30 +224,32 @@
         </div>
       </article>
 
-      <!-- 4. Fuel -->
+      <!-- 4. AdventureWorks -->
       <article class="project">
-        <div class="thumb"><img src="fuel.png" alt="Aperçu du dashboard Looker Studio Fuel Price Tracker" loading="lazy" onerror="this.parentNode.classList.add('placeholder');this.remove()"></div>
+        <div class="thumb"><img src="adventureworks.png" alt="Aperçu du dashboard Power BI AdventureWorks" loading="lazy" onerror="this.parentNode.classList.add('placeholder');this.remove()"><span>Fournisseurs → Stocks → Marge</span></div>
         <div class="body">
-          <div class="tags-top"><span class="badge">Pipeline automatisé</span><span class="badge">Données mises à jour chaque heure</span></div>
-          <h3>Fuel Price Tracker France</h3>
-          <p class="question">Où faire le plein au meilleur prix, près de chez moi, aujourd'hui ?</p>
+          <div class="tags-top">
+            <span class="badge">Supply chain</span>
+            <span class="badge wip">En cours · finalisation octobre 2026</span>
+          </div>
+          <h3>AdventureWorks — Analyse supply chain</h3>
+          <p class="question">Quel est l'impact de la performance fournisseurs sur la rotation des stocks et la marge commerciale ?</p>
           <ul>
-            <li>Pipeline ETL planifié (GitHub Actions) : open data gouvernemental → BigQuery, ~9 800 stations</li>
-            <li>Recherche par code postal et rayon grâce aux fonctions géographiques BigQuery</li>
-            <li>Qualité des données : ruptures vs arrêts définitifs, prix obsolètes signalés, fuseau horaire erroné corrigé dans la source</li>
-            <li>Constat : le gazole coûte environ 8 centimes de plus par litre sur autoroute</li>
+            <li>13 tables nettoyées (en-têtes, encodage) et chargées dans une base SQLite</li>
+            <li>Analyse exploratoire et API FastAPI pour exposer les indicateurs</li>
+            <li>Tableau de bord Power BI en cours de construction</li>
+            <li>Projet piloté en sprints hebdomadaires sur Trello</li>
           </ul>
-          <div class="stack"><span>Python</span><span>pandas</span><span>BigQuery SQL</span><span>GitHub Actions</span><span>Looker Studio</span></div>
+          <div class="stack"><span>Python</span><span>pandas</span><span>SQLite</span><span>FastAPI</span><span>Power BI</span><span>Trello</span></div>
           <div class="actions">
-            <a class="btn btn-primary" href="https://lookerstudio.google.com/reporting/9b5f5714-9fa5-41d2-a50d-8be26e03463f/page/9wBAG" target="_blank" rel="noopener">Ouvrir le dashboard</a>
-            <a class="btn btn-ghost" href="https://github.com/XiaoqingGdc/fuel-price-tracker-france" target="_blank" rel="noopener">Code sur GitHub</a>
+            <a class="btn btn-ghost" href="https://github.com/XiaoqingGdc/adventureworks-supply-chain-analysis" target="_blank" rel="noopener">Code sur GitHub</a>
           </div>
         </div>
       </article>
 
       <!-- 5. FAO -->
       <article class="project">
-        <div class="thumb"><img src="fao.png" alt="Restitution du projet FAO sous-nutrition mondiale" loading="lazy" onerror="this.parentNode.classList.add('placeholder');this.remove()"></div>
+        <div class="thumb"><img src="fao.png" alt="Analyse Python du projet FAO sous-nutrition mondiale" loading="lazy" onerror="this.parentNode.classList.add('placeholder');this.remove()"><span>FAO<br>ACP · K-Means</span></div>
         <div class="body">
           <div class="tags-top"><span class="badge">Analyse &amp; machine learning</span></div>
           <h3>FAO — Sous-nutrition mondiale</h3>
@@ -263,7 +268,7 @@
 
       <!-- 6. Job search automation -->
       <article class="project">
-        <div class="thumb placeholder"><span>API → Make<br>→ Google Sheets</span></div>
+        <div class="thumb"><img src="recherche-emploi.png" style="object-fit:contain;object-position:center;background:#f4f4f4" alt="Scénario Make d'automatisation de la recherche d'emploi" loading="lazy" onerror="this.parentNode.classList.add('placeholder');this.remove()"><span>API → Make<br>→ Google Sheets</span></div>
         <div class="body">
           <div class="tags-top"><span class="badge">Automatisation</span><span class="badge">Exécution quotidienne</span></div>
           <h3>Automatisation de ma recherche d'emploi</h3>
@@ -290,16 +295,16 @@
     <p class="sub">Des données brutes jusqu'à la décision.</p>
     <div class="grid3">
       <div class="box">
-        <h3>Préparer les données</h3>
-        <p>Python, pandas, SQL, SQLite, BigQuery, Databricks. Nettoyage, contrôle qualité, pipelines ETL automatisés, API (FastAPI, API REST), automatisation no-code (Make).</p>
+        <h3>Analyse &amp; BI</h3>
+        <div class="stack"><span>SQL</span><span>Power BI</span><span>Power Query</span><span>DAX</span><span>Excel</span><span>Looker Studio</span></div>
       </div>
       <div class="box">
-        <h3>Visualiser &amp; piloter</h3>
-        <p>Power BI (DAX, modélisation), Looker Studio, Amazon QuickSight, Excel. Des KPI clairs, prêts pour la prise de décision.</p>
+        <h3>Data &amp; Engineering</h3>
+        <div class="stack"><span>Python</span><span>pandas</span><span>ETL / ELT</span><span>API</span><span>BigQuery</span><span>SQLite</span><span>Git / GitHub</span><span>GitHub Actions</span></div>
       </div>
       <div class="box">
-        <h3>Comprendre le métier</h3>
-        <p>Achats, approvisionnement, performance fournisseurs, ERP (Proginov, notions de Sage et SAP), tests fonctionnels et intégration.</p>
+        <h3>Data Science &amp; Cloud</h3>
+        <div class="stack"><span>Machine Learning</span><span>scikit-learn</span><span>Data Modeling</span><span>Data Warehouse</span><span>Azure</span><span>Databricks</span></div>
       </div>
     </div>
   </div>
