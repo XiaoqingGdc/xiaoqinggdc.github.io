@@ -95,6 +95,7 @@
   .contact .btns{justify-content:center}
 
   footer{padding:32px 0 48px;color:var(--muted);font-size:14px;text-align:center}
+  footer .legal{max-width:640px;margin:8px auto 0;font-size:12.5px;line-height:1.5;opacity:.85}
   footer button{background:none;border:none;color:var(--teal);cursor:pointer;font:inherit;text-decoration:underline}
 
   /* Modal (dashboards) */
@@ -179,8 +180,7 @@
           </ul>
           <div class="stack"><span>Python</span><span>SQLite</span><span>FastAPI</span><span>scikit-learn</span><span>Power BI</span></div>
           <div class="actions">
-            <!-- À COMPLÉTER : lien « Publier sur le web » Power BI (https://app.powerbi.com/view?r=...) -->
-            <button class="btn btn-primary" data-dashboard="LIEN_POWERBI_ADVENTUREWORKS" data-title="AdventureWorks — Analyse supply chain">Ouvrir le dashboard</button>
+            <button class="btn btn-primary" data-dashboard="https://app.powerbi.com/view?r=eyJrIjoiMDZlNzNhMDMtYmE1NC00NDc3LTgzODktZjYxNDJkMTkwMjMzIiwidCI6IjQ3YTE4ODE2LTIwNDMtNGNkMC04YmY0LWUwYzk0MmQ4YzJkNiIsImMiOjN9" data-title="AdventureWorks — Analyse supply chain">Ouvrir le dashboard</button>
             <a class="btn btn-ghost" href="https://github.com/XiaoqingGdc/adventureworks-supply-chain-analysis" target="_blank" rel="noopener">Code sur GitHub</a>
           </div>
         </div>
@@ -338,7 +338,8 @@
 
 <footer>
   <div class="wrap">
-    © 2026 Xiaoqing Zhou Grandcoing · <button id="cookie-settings">Gérer les cookies</button>
+    © 2026 Xiaoqing Zhou Grandcoing · Tous droits réservés · <button id="cookie-settings">Gérer les cookies</button>
+    <div class="legal">Les textes, analyses et visuels de ce site sont protégés par le droit d'auteur. Toute reproduction ou réutilisation, même partielle, nécessite mon autorisation préalable. Les jeux de données appartiennent à leurs sources respectives.</div>
   </div>
 </footer>
 
